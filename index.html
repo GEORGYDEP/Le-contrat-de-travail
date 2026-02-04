@@ -1,58 +1,2089 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'Art de la Comptabilité</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f4e4bc;
-      background-image: url("https://www.transparenttextures.com/patterns/parchment.png");
-      font-family: 'Playfair Display', serif;
-    }
-    .renaissance-font {
-      font-family: 'Cinzel', serif;
-    }
-    .cursive-font {
-      font-family: 'Great+Vibes', cursive;
-    }
-    .italiana-font {
-      font-family: 'Italiana', serif;
-    }
-    /* Custom Scrollbar for parchment look */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #e4d4ac;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #8b5e3c;
-      border-radius: 5px;
-    }
-    .ink-text {
-      color: #1a2a3a;
-    }
-    .gold-border {
-      border: 4px double #b8860b;
-    }
-  </style>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Contrat Quest - Maîtrise le Droit du Travail Belge!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6B6B;
+            --accent: #4ECDC4;
+            --success: #2ECC71;
+            --warning: #F39C12;
+            --danger: #E74C3C;
+            --dark: #2D3436;
+            --light: #F8F9FA;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Header */
+        header {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .score-display {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .score-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+
+        .score-item .icon {
+            font-size: 1.2rem;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Welcome Screen */
+        .welcome-screen {
+            text-align: center;
+            padding: 3rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Characters */
+        .characters {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .character {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .character:hover {
+            transform: scale(1.05);
+        }
+
+        .character-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-avatar.emma {
+            background: var(--gradient-2);
+        }
+
+        .character-avatar.hugo {
+            background: var(--gradient-1);
+        }
+
+        .character-avatar::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .character-name {
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .character-job {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .character-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        .badge-cdi { background: var(--success); }
+        .badge-cdd { background: var(--warning); }
+
+        /* Modules Grid */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .module-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(78, 205, 196, 0.2);
+        }
+
+        .module-card.locked {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .module-card.completed {
+            border-color: var(--success);
+        }
+
+        .module-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .module-title {
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-desc {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .module-progress {
+            margin-top: 1rem;
+            background: rgba(255,255,255,0.1);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .module-progress-bar {
+            height: 100%;
+            background: var(--gradient-4);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* Game Screen */
+        .game-screen {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .game-screen.active {
+            display: block;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .game-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Question Card */
+        .question-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .question-number {
+            display: inline-block;
+            background: var(--gradient-1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-context {
+            background: rgba(78, 205, 196, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            border-radius: 0 15px 15px 0;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Scenario Box with Illustration */
+        .scenario-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .scenario-illustration {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .scenario-content {
+            flex: 1;
+        }
+
+        .scenario-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        /* Options */
+        .options-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .option-btn {
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--accent);
+            transform: translateX(10px);
+        }
+
+        .option-btn.correct {
+            background: rgba(46, 204, 113, 0.3);
+            border-color: var(--success);
+        }
+
+        .option-btn.incorrect {
+            background: rgba(231, 76, 60, 0.3);
+            border-color: var(--danger);
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+        }
+
+        .option-letter {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* Feedback */
+        .feedback {
+            display: none;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.success {
+            background: rgba(46, 204, 113, 0.2);
+            border: 2px solid var(--success);
+        }
+
+        .feedback.error {
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid var(--danger);
+        }
+
+        .feedback-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feedback-text {
+            line-height: 1.6;
+        }
+
+        .next-btn {
+            background: var(--gradient-4);
+            border: none;
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .next-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
+        }
+
+        /* Mini Games */
+        .mini-game {
+            background: rgba(255,255,255,0.08);
+            border-radius: 25px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .mini-game-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Drag and Drop Game */
+        .drag-drop-area {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .drop-zone {
+            width: 280px;
+            min-height: 300px;
+            background: rgba(255,255,255,0.05);
+            border: 3px dashed rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 1rem;
+        }
+
+        .drop-zone.dragover {
+            border-color: var(--accent);
+            background: rgba(78, 205, 196, 0.1);
+        }
+
+        .drop-zone-title {
+            text-align: center;
+            font-weight: 800;
+            padding: 0.8rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .drop-zone.valid .drop-zone-title {
+            background: rgba(46, 204, 113, 0.3);
+        }
+
+        .drop-zone.invalid .drop-zone-title {
+            background: rgba(231, 76, 60, 0.3);
+        }
+
+        .draggable-item {
+            background: rgba(255,255,255,0.15);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 0.5rem 0;
+            cursor: grab;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .draggable-item:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .draggable-item.dragging {
+            opacity: 0.5;
+            transform: scale(1.05);
+        }
+
+        .items-pool {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Matching Game */
+        .matching-game {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .match-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .match-card:hover:not(.matched) {
+            transform: scale(1.02);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .match-card.selected {
+            border: 3px solid var(--accent);
+            background: rgba(78, 205, 196, 0.2);
+        }
+
+        .match-card.matched {
+            background: rgba(46, 204, 113, 0.3);
+            border: 3px solid var(--success);
+        }
+
+        .match-card.wrong {
+            animation: shake 0.5s ease;
+            background: rgba(231, 76, 60, 0.3);
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        /* Calculator Game */
+        .calculator-game {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .calc-scenario {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .calc-info {
+            background: rgba(255,255,255,0.08);
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .calc-info h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .calc-info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .calc-input-group {
+            margin-bottom: 1rem;
+        }
+
+        .calc-input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .calc-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .verify-btn {
+            background: var(--gradient-1);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .verify-btn:hover {
+            transform: scale(1.02);
+        }
+
+        /* Summary */
+        .summary-screen {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .summary-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .summary-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .summary-score {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-score span {
+            background: var(--gradient-4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .star-rating {
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
+
+        .star-rating .star {
+            color: rgba(255,255,255,0.2);
+            transition: color 0.3s ease;
+        }
+
+        .star-rating .star.active {
+            color: #FFD700;
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(108, 99, 255, 0.2) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid var(--accent);
+        }
+
+        .info-card-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card-content {
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: rgba(255, 215, 0, 0.3);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+
+        /* Illustration SVG */
+        .svg-illustration {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px;
+            height: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-4);
+            border-radius: 50px;
+            transition: width 0.5s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .welcome-title {
+                font-size: 2.5rem;
+            }
+            
+            .characters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .calc-scenario {
+                grid-template-columns: 1fr;
+            }
+            
+            .drag-drop-area {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .drop-zone {
+                width: 100%;
+            }
+        }
+
+        /* Hidden */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+
+        /* Badge achievement */
+        .badge-achievement {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: rgba(0,0,0,0.9);
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            z-index: 1000;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .badge-achievement.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .badge-achievement-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge-achievement-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+
+        /* Table styling */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .comparison-table th {
+            background: rgba(108, 99, 255, 0.3);
+            font-weight: 800;
+        }
+
+        .comparison-table tr:nth-child(even) td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* Car illustration */
+        .car-illustration {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .car-svg {
+            position: absolute;
+            bottom: 20px;
+            animation: drive 8s linear infinite;
+        }
+
+        @keyframes drive {
+            0% { left: -100px; }
+            100% { left: calc(100% + 100px); }
+        }
+
+        .road {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: #333;
+            border-top: 3px dashed #fff;
+        }
+    </style>
 </head>
 <body>
-  <div id="root"></div>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🎯 Contrat Quest</div>
+            <div class="score-display">
+                <div class="score-item">
+                    <span class="icon">⭐</span>
+                    <span id="totalScore">0</span> pts
+                </div>
+                <div class="score-item">
+                    <span class="icon">🏆</span>
+                    <span id="badges">0</span> badges
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="welcome-screen">
+            <h1 class="welcome-title">Bienvenue dans Contrat Quest!</h1>
+            <p class="welcome-subtitle">Deviens expert en droit du travail belge avec Emma et Hugo 🇧🇪</p>
+            
+            <div class="characters">
+                <div class="character">
+                    <div class="character-avatar emma">👩‍💼</div>
+                    <div class="character-name">Emma Tomson</div>
+                    <div class="character-job">Employée administrative</div>
+                    <span class="character-badge badge-cdi">CDI</span>
+                </div>
+                <div class="character">
+                    <div class="character-avatar hugo">👨‍🔧</div>
+                    <div class="character-name">Hugo Devosse</div>
+                    <div class="character-job">Opérateur de production</div>
+                    <span class="character-badge badge-cdd">CDD</span>
+                </div>
+            </div>
+
+            <p style="margin-bottom: 2rem; opacity: 0.8;">Choisis un module pour commencer ton aventure!</p>
+
+            <div class="modules-grid">
+                <div class="module-card" onclick="startModule('conditions')">
+                    <div class="module-icon">📜</div>
+                    <div class="module-title">Les 4 Conditions de Validité</div>
+                    <div class="module-desc">Découvre ce qui rend un contrat de travail valide... ou pas!</div>
+                    <div class="module-progress">
+                        <div class="module-progress-bar" id="progress-conditions" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="module-card" onclick="startModule('frais')">
+                    <div class="module-icon">🚗</div>
+                    <div class="module-title">Frais de Déplacement</div>
+                    <div class="module-desc">Domicile-travail vs professionnel : qui paie quoi?</div>
+                    <div class="module-progress">
+                        <div class="module-progress-bar" id="progress-frais" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="module-card" onclick="startModule('representation')">
+                    <div class="module-icon">💼</div>
+                    <div class="module-title">Frais de Représentation</div>
+                    <div class="module-desc">Les forfaits, un avantage pour Emma!</div>
+                    <div class="module-progress">
+                        <div class="module-progress-bar" id="progress-representation" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="module-card" onclick="startModule('types')">
+                    <div class="module-icon">📋</div>
+                    <div class="module-title">Types de Contrats</div>
+                    <div class="module-desc">CDI, CDD, ouvrier, employé... compare Emma et Hugo!</div>
+                    <div class="module-progress">
+                        <div class="module-progress-bar" id="progress-types" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="game-screen">
+            <div class="game-header">
+                <button class="back-btn" onclick="backToMenu()">
+                    ← Retour au menu
+                </button>
+                <h2 class="game-title" id="moduleTitle">Module</h2>
+                <div id="moduleProgress">1/5</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="gameProgressBar" style="width: 20%"></div>
+            </div>
+
+            <div id="gameContent">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Summary Screen -->
+        <div id="summaryScreen" class="summary-screen hidden">
+            <div class="summary-icon" id="summaryIcon">🎉</div>
+            <h2 class="summary-title" id="summaryTitle">Module Terminé!</h2>
+            <div class="star-rating" id="starRating">
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+            </div>
+            <p class="summary-score">Tu as obtenu <span id="moduleScore">0</span> points!</p>
+            <button class="next-btn" onclick="backToMenu()">Continuer l'aventure →</button>
+        </div>
+    </div>
+
+    <!-- Badge Achievement Popup -->
+    <div id="badgePopup" class="badge-achievement">
+        <div class="badge-achievement-icon" id="badgeIcon">🏆</div>
+        <div class="badge-achievement-title" id="badgeTitle">Badge Débloqué!</div>
+    </div>
+
+    <script>
+        // Game State
+        const gameState = {
+            totalScore: 0,
+            badges: 0,
+            currentModule: null,
+            currentQuestion: 0,
+            moduleScore: 0,
+            completedModules: {},
+            moduleProgress: {
+                conditions: 0,
+                frais: 0,
+                representation: 0,
+                types: 0
+            }
+        };
+
+        // Questions Database
+        const modules = {
+            conditions: {
+                title: "Les 4 Conditions de Validité",
+                questions: [
+                    {
+                        type: "info",
+                        content: `
+                            <div class="info-card">
+                                <div class="info-card-title">📚 À retenir!</div>
+                                <div class="info-card-content">
+                                    <p>Pour qu'un contrat de travail soit <strong>valide</strong>, il faut réunir <span class="highlight">4 conditions essentielles</span> :</p>
+                                    <br>
+                                    <p>1️⃣ <strong>Le consentement</strong> - Les parties doivent être d'accord librement</p>
+                                    <p>2️⃣ <strong>La capacité</strong> - Les parties doivent pouvoir s'engager juridiquement</p>
+                                    <p>3️⃣ <strong>L'objet licite</strong> - Le travail demandé doit être légal</p>
+                                    <p>4️⃣ <strong>L'objet certain</strong> - Les conditions doivent être claires et définies</p>
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "😰",
+                            title: "Situation n°1 : La menace",
+                            text: "Marco, 19 ans, vient d'arriver en Belgique. Son patron lui dit : « Si tu ne signes pas ce contrat à 8€/heure, je garde ton passeport et je te dénonce aux autorités! »"
+                        },
+                        question: "Quelle condition de validité n'est PAS respectée ici?",
+                        options: [
+                            { text: "La capacité juridique", correct: false },
+                            { text: "Le consentement libre", correct: true },
+                            { text: "L'objet licite", correct: false },
+                            { text: "L'objet certain", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Excellent! 🎯 Le consentement doit être LIBRE, sans menaces ni pressions. Ici, Marco est victime de chantage et ne peut pas décider librement.",
+                            incorrect: "Pas tout à fait... Réfléchis : Marco peut-il vraiment dire 'non' s'il est menacé? Le problème ici est le CONSENTEMENT qui n'est pas libre!"
+                        }
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "👦",
+                            title: "Situation n°2 : Le petit génie",
+                            text: "Lucas, 14 ans, est un génie de l'informatique. Une startup veut l'embaucher à temps plein sans l'accord de ses parents."
+                        },
+                        question: "Pourquoi ce contrat serait-il invalide?",
+                        options: [
+                            { text: "L'objet n'est pas certain", correct: false },
+                            { text: "Le consentement fait défaut", correct: false },
+                            { text: "Lucas n'a pas la capacité juridique pour ce type de contrat", correct: true },
+                            { text: "L'informatique n'est pas un travail licite", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Bravo! 👏 Un mineur de 14 ans ne peut pas conclure seul un contrat de travail à temps plein. Il lui faut l'autorisation de son représentant légal!",
+                            incorrect: "Réfléchis à l'âge de Lucas... Un enfant de 14 ans a-t-il le droit de s'engager seul dans un contrat de travail? C'est une question de CAPACITÉ!"
+                        }
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "💊",
+                            title: "Situation n°3 : Le laboratoire secret",
+                            text: "Sarah, chimiste diplômée, se voit proposer un contrat pour fabriquer des amphétamines dans un laboratoire clandestin. Le salaire est de 5000€/mois."
+                        },
+                        question: "Ce contrat est invalide car...",
+                        options: [
+                            { text: "Le salaire est trop élevé", correct: false },
+                            { text: "L'objet du contrat est illicite (fabrication de drogue)", correct: true },
+                            { text: "Sarah n'est pas consentante", correct: false },
+                            { text: "La capacité juridique fait défaut", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Exactement! 🎯 Fabriquer des drogues est ILLÉGAL. Un contrat ne peut pas porter sur une activité criminelle, même si le salaire est attractif!",
+                            incorrect: "Pense à ce qu'on demande à Sarah de faire... La fabrication de drogue est-elle légale? L'OBJET du contrat doit être LICITE!"
+                        }
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "🎯",
+                            title: "Situation n°4 : L'objectif impossible",
+                            text: "Tom signe un contrat de commercial. Sa rémunération : « Un pourcentage sur les ventes, le montant sera décidé plus tard en fonction de l'humeur du patron »."
+                        },
+                        question: "Quel est le problème avec ce contrat?",
+                        options: [
+                            { text: "Tom n'est pas consentant", correct: false },
+                            { text: "L'objet est illicite", correct: false },
+                            { text: "Tom n'a pas la capacité", correct: false },
+                            { text: "L'objet n'est pas certain (rémunération indéterminable)", correct: true }
+                        ],
+                        feedback: {
+                            correct: "Parfait! 💯 La rémunération doit être DÉTERMINABLE à l'avance. « Selon l'humeur du patron » n'est pas un critère objectif! L'objet doit être CERTAIN.",
+                            incorrect: "Lis bien les conditions de rémunération... « Selon l'humeur du patron » permet-il de savoir combien Tom va gagner? L'objet doit être CERTAIN!"
+                        }
+                    },
+                    {
+                        type: "matching",
+                        title: "🎮 Jeu d'association : Trouve la condition violée!",
+                        instruction: "Associe chaque situation à la condition de validité qui n'est PAS respectée",
+                        pairs: [
+                            { situation: "Employeur menace de révéler un secret", condition: "Consentement", id: 1 },
+                            { situation: "Contrat avec une personne sous tutelle sans accord du tuteur", condition: "Capacité", id: 2 },
+                            { situation: "Travail de prostitution forcée", condition: "Objet licite", id: 3 },
+                            { situation: "Salaire 'à définir un jour'", condition: "Objet certain", id: 4 }
+                        ]
+                    }
+                ]
+            },
+            frais: {
+                title: "Frais de Déplacement",
+                questions: [
+                    {
+                        type: "info",
+                        content: `
+                            <div class="info-card">
+                                <div class="info-card-title">🚗 Frais de Déplacement : Comprendre la différence!</div>
+                                <div class="info-card-content">
+                                    <p>Il existe <strong>2 types de déplacements</strong> en voiture :</p>
+                                    <br>
+                                    <p>🏠➡️🏢 <strong>Domicile-Travail</strong> = Trajet PRIVÉ (tu choisis où tu habites)</p>
+                                    <p>🏢➡️🤝 <strong>Déplacement professionnel</strong> = Pour le compte de l'employeur</p>
+                                    <br>
+                                    <p>💡 <strong>Attention!</strong> Même si le trajet domicile-travail est considéré comme "privé", il existe une <span class="highlight">exemption fiscale de 500€/an</span> (revenus 2025) si ton employeur te verse une indemnité!</p>
+                                </div>
+                            </div>
+                            <div class="car-illustration">
+                                <svg class="car-svg" width="80" height="40" viewBox="0 0 80 40">
+                                    <rect x="10" y="15" width="50" height="20" rx="5" fill="#6C63FF"/>
+                                    <rect x="20" y="5" width="30" height="15" rx="3" fill="#6C63FF"/>
+                                    <rect x="25" y="8" width="10" height="10" fill="#87CEEB"/>
+                                    <rect x="40" y="8" width="10" height="10" fill="#87CEEB"/>
+                                    <circle cx="20" cy="35" r="6" fill="#333"/>
+                                    <circle cx="50" cy="35" r="6" fill="#333"/>
+                                    <circle cx="20" cy="35" r="3" fill="#666"/>
+                                    <circle cx="50" cy="35" r="3" fill="#666"/>
+                                </svg>
+                                <div class="road"></div>
+                            </div>
+                        `
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "🚗",
+                            title: "Le trajet d'Emma",
+                            text: "Emma habite à Ath et travaille chez Belvas à Ghislenghien. Chaque jour, elle fait 15km aller et 15km retour avec sa voiture personnelle. L'employeur lui rembourse 0,32€/km."
+                        },
+                        question: "Ce trajet domicile-travail est considéré comme :",
+                        options: [
+                            { text: "Un déplacement professionnel car c'est pour aller travailler", correct: false },
+                            { text: "Un déplacement privé car c'est le choix personnel d'habiter à Ath", correct: true },
+                            { text: "Un déplacement mixte", correct: false },
+                            { text: "Aucune de ces réponses", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Exact! 🎯 Le trajet domicile-travail est considéré comme PRIVÉ car c'est le travailleur qui choisit son lieu de résidence. Mais bonne nouvelle : il existe une exemption fiscale!",
+                            incorrect: "Réfléchis... Qui décide où Emma habite? C'est elle! Le trajet domicile-travail est donc considéré comme un choix PRIVÉ."
+                        }
+                    },
+                    {
+                        type: "calculator",
+                        title: "🧮 Calcul : L'exemption fiscale d'Emma",
+                        scenario: `Emma parcourt 30 km/jour (aller-retour) pendant 220 jours de travail par an.
+                        Son employeur lui rembourse 0,32€/km.`,
+                        questions: [
+                            {
+                                label: "Combien de km Emma parcourt-elle par an?",
+                                answer: 6600,
+                                unit: "km",
+                                hint: "30 km × 220 jours = ?"
+                            },
+                            {
+                                label: "Combien reçoit-elle de son employeur par an?",
+                                answer: 2112,
+                                unit: "€",
+                                hint: "6600 km × 0,32€ = ?"
+                            },
+                            {
+                                label: "Montant exonéré d'impôts (max 500€)?",
+                                answer: 500,
+                                unit: "€",
+                                hint: "L'exemption est plafonnée à 500€"
+                            }
+                        ],
+                        explanation: "Emma reçoit 2112€ mais seuls 500€ sont exonérés d'impôts. Le reste (1612€) est considéré comme un avantage imposable... sauf si elle opte pour les frais réels!"
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "🤝",
+                            title: "Emma en mission",
+                            text: "Aujourd'hui, Emma doit se rendre chez un client à Bruxelles pour une réunion. Elle utilise sa voiture personnelle depuis le bureau de Belvas."
+                        },
+                        question: "Ce déplacement Belvas → Bruxelles est :",
+                        options: [
+                            { text: "Un déplacement privé", correct: false },
+                            { text: "Un déplacement professionnel entièrement remboursable", correct: true },
+                            { text: "Non remboursable", correct: false },
+                            { text: "À charge du client", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Bravo! 🎯 Ce déplacement est 100% PROFESSIONNEL car Emma se déplace pour le compte de son employeur. Il est remboursé à 0,32€/km selon son contrat!",
+                            incorrect: "Attention! Emma se déplace pour rencontrer un CLIENT de Belvas. C'est donc un déplacement PROFESSIONNEL pour le compte de l'employeur."
+                        }
+                    },
+                    {
+                        type: "dragdrop",
+                        title: "🎮 Trie les déplacements!",
+                        instruction: "Glisse chaque situation dans la bonne catégorie",
+                        items: [
+                            { text: "Ath → Belvas chaque matin", category: "prive" },
+                            { text: "Belvas → Client à Bruxelles", category: "pro" },
+                            { text: "Visite fournisseur à Liège", category: "pro" },
+                            { text: "Retour du bureau à la maison", category: "prive" },
+                            { text: "Formation obligatoire à Namur", category: "pro" },
+                            { text: "Choix d'habiter plus loin", category: "prive" }
+                        ],
+                        categories: {
+                            prive: "🏠 Déplacement PRIVÉ",
+                            pro: "💼 Déplacement PROFESSIONNEL"
+                        }
+                    },
+                    {
+                        type: "info",
+                        content: `
+                            <div class="info-card">
+                                <div class="info-card-title">📊 Récapitulatif - À retenir pour l'examen!</div>
+                                <div class="info-card-content">
+                                    <table class="comparison-table">
+                                        <tr>
+                                            <th>Critère</th>
+                                            <th>Domicile-Travail</th>
+                                            <th>Professionnel</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Nature</td>
+                                            <td>Privé</td>
+                                            <td>Professionnel</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Obligation employeur</td>
+                                            <td>Non (sauf CCT)</td>
+                                            <td>Oui</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Exemption fiscale 2025</td>
+                                            <td>Max 500€/an</td>
+                                            <td>100% si forfait État</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chez Belvas (Emma)</td>
+                                            <td>0,32€/km</td>
+                                            <td>0,32€/km</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            representation: {
+                title: "Frais de Représentation",
+                questions: [
+                    {
+                        type: "info",
+                        content: `
+                            <div class="info-card">
+                                <div class="info-card-title">💼 Les Frais de Représentation : Le cas d'Emma</div>
+                                <div class="info-card-content">
+                                    <p>Dans son contrat, Emma bénéficie de <span class="highlight">125€/mois de frais de représentation</span>.</p>
+                                    <br>
+                                    <p>🤔 <strong>C'est quoi exactement?</strong></p>
+                                    <p>Ce sont des frais forfaitaires pour couvrir les dépenses liées à l'image professionnelle : vêtements de travail, repas d'affaires, petits cadeaux clients, etc.</p>
+                                    <br>
+                                    <p>💡 <strong>Avantage majeur :</strong> Ces 125€ ne sont PAS soumis aux cotisations sociales ni à l'impôt (si justifiés et raisonnables)!</p>
+                                </div>
+                            </div>
+                            <div class="scenario-box">
+                                <div class="scenario-illustration">👩‍💼</div>
+                                <div class="scenario-content">
+                                    <div class="scenario-title">Le contrat d'Emma précise :</div>
+                                    <p>"Les frais de représentation sont pris en charge par l'employeur et s'élèvent à 125 Euros par mois."</p>
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "💰",
+                            title: "Le calcul d'Emma",
+                            text: "Emma gagne 2000€ brut/mois + 125€ de frais de représentation. Elle se demande si elle doit payer des cotisations sociales sur les 125€."
+                        },
+                        question: "Les frais de représentation forfaitaires sont-ils soumis aux cotisations sociales?",
+                        options: [
+                            { text: "Oui, c'est du salaire déguisé", correct: false },
+                            { text: "Non, s'ils sont raisonnables et correspondent à des frais réels", correct: true },
+                            { text: "Seulement au-delà de 100€", correct: false },
+                            { text: "Toujours taxés à 50%", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Exact! 🎯 Les frais de représentation forfaitaires ne sont pas considérés comme de la rémunération s'ils couvrent des frais réels et restent raisonnables. C'est un vrai avantage!",
+                            incorrect: "Réfléchis... Les frais de représentation servent à rembourser des dépenses professionnelles. S'ils sont raisonnables, ils ne sont pas taxés!"
+                        }
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "📊",
+                            title: "Comparaison annuelle",
+                            text: "Emma reçoit 125€/mois de frais de représentation. Calculons l'avantage annuel par rapport à un salaire équivalent."
+                        },
+                        question: "Combien Emma économise-t-elle en cotisations sociales par an si on considère ~13% de cotisations travailleur évitées?",
+                        options: [
+                            { text: "Environ 75€/an", correct: false },
+                            { text: "Environ 195€/an", correct: true },
+                            { text: "Environ 500€/an", correct: false },
+                            { text: "0€, il n'y a pas d'économie", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Bravo! 125€ × 12 mois = 1500€/an. 1500€ × 13% ≈ 195€ d'économie sur les cotisations! Et il y a aussi l'économie d'impôts! 💰",
+                            incorrect: "Calcule : 125€ × 12 mois = 1500€/an. Avec environ 13% de cotisations évitées : 1500€ × 0,13 ≈ 195€"
+                        }
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "⚠️",
+                            title: "Attention aux abus!",
+                            text: "Un employeur propose à son employé de lui verser 2000€/mois en 'frais de représentation' au lieu d'un salaire normal pour éviter les taxes."
+                        },
+                        question: "Que risque cet employeur?",
+                        options: [
+                            { text: "Rien, c'est légal", correct: false },
+                            { text: "Un redressement fiscal et social car c'est du salaire déguisé", correct: true },
+                            { text: "Une médaille pour sa créativité", correct: false },
+                            { text: "Juste un avertissement verbal", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Exact! 🎯 L'ONSS et le fisc peuvent requalifier ces sommes en salaire si elles sont disproportionnées. Sanctions : rappel de cotisations + intérêts + amendes!",
+                            incorrect: "2000€ de frais de représentation? C'est clairement excessif! L'administration considérera cela comme du SALAIRE DÉGUISÉ avec des conséquences fiscales et sociales."
+                        }
+                    },
+                    {
+                        type: "dragdrop",
+                        title: "🎮 Vrai ou Faux : Les frais de représentation",
+                        instruction: "Glisse chaque affirmation dans la bonne colonne",
+                        items: [
+                            { text: "125€/mois pour une employée administrative = raisonnable", category: "vrai" },
+                            { text: "Les frais doivent couvrir des dépenses réelles", category: "vrai" },
+                            { text: "On peut donner 5000€/mois en frais de représentation", category: "faux" },
+                            { text: "Hugo (ouvrier) a aussi des frais de représentation chez Belvas", category: "faux" }
+                        ],
+                        categories: {
+                            vrai: "✅ VRAI",
+                            faux: "❌ FAUX"
+                        }
+                    }
+                ]
+            },
+            types: {
+                title: "Types de Contrats",
+                questions: [
+                    {
+                        type: "info",
+                        content: `
+                            <div class="info-card">
+                                <div class="info-card-title">📋 Emma vs Hugo : Comparons leurs contrats!</div>
+                                <div class="info-card-content">
+                                    <table class="comparison-table">
+                                        <tr>
+                                            <th>Critère</th>
+                                            <th>👩‍💼 Emma</th>
+                                            <th>👨‍🔧 Hugo</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Statut</td>
+                                            <td>Employée</td>
+                                            <td>Ouvrier</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Durée</td>
+                                            <td>CDI</td>
+                                            <td>CDD (2 mois)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rémunération</td>
+                                            <td>2000€/mois</td>
+                                            <td>13€/heure</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Commission paritaire</td>
+                                            <td>CP 201</td>
+                                            <td>CP 118</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Frais représentation</td>
+                                            <td>125€/mois</td>
+                                            <td>Aucun</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "🏭",
+                            title: "La nature du travail",
+                            text: "Hugo travaille comme opérateur de production chez Belvas (chocolaterie). Il effectue un travail principalement manuel : fabrication, conditionnement..."
+                        },
+                        question: "Pourquoi Hugo est-il classé comme 'ouvrier' et non 'employé'?",
+                        options: [
+                            { text: "Parce qu'il gagne moins qu'Emma", correct: false },
+                            { text: "Parce qu'il effectue un travail principalement manuel", correct: true },
+                            { text: "Parce qu'il est en CDD", correct: false },
+                            { text: "C'est son choix personnel", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Exact! 🎯 La distinction ouvrier/employé se base sur la NATURE du travail : manuel = ouvrier, intellectuel = employé. Hugo fait un travail physique de production.",
+                            incorrect: "La différence ouvrier/employé n'est pas liée au salaire ou au type de contrat, mais à la NATURE du travail : manuel vs intellectuel."
+                        }
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "📅",
+                            title: "Le CDD d'Hugo",
+                            text: "Hugo a un CDD du 1er novembre au 31 décembre 2017 (2 mois). Belvas aimerait le garder plus longtemps avec des CDD successifs."
+                        },
+                        question: "Combien de CDD successifs maximum Belvas peut-elle proposer à Hugo?",
+                        options: [
+                            { text: "Autant qu'elle veut", correct: false },
+                            { text: "Maximum 2 CDD", correct: false },
+                            { text: "Maximum 4 CDD (si min 3 mois chacun et max 2 ans au total)", correct: true },
+                            { text: "1 seul, après c'est obligatoirement un CDI", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Bravo! 🎯 La loi limite à 4 CDD successifs, avec minimum 3 mois par contrat et maximum 2 ans au total. Cela évite les abus!",
+                            incorrect: "La loi belge encadre les CDD successifs : maximum 4 contrats, minimum 3 mois chacun, maximum 2 ans au total."
+                        }
+                    },
+                    {
+                        type: "quiz",
+                        scenario: {
+                            icon: "💵",
+                            title: "La rémunération",
+                            text: "Emma est payée 2000€/mois. Hugo est payé 13€/heure. Pourquoi cette différence de mode de paiement?"
+                        },
+                        question: "Traditionnellement en Belgique, comment sont payés les ouvriers vs les employés?",
+                        options: [
+                            { text: "Ouvriers au mois, employés à l'heure", correct: false },
+                            { text: "Ouvriers à l'heure, employés au mois", correct: true },
+                            { text: "Tous au mois depuis 2014", correct: false },
+                            { text: "Cela dépend uniquement du contrat", correct: false }
+                        ],
+                        feedback: {
+                            correct: "Exact! 🎯 Historiquement, les ouvriers sont payés à l'heure (lié au temps de production) et les employés au mois. Cette distinction tend à s'atténuer mais reste fréquente.",
+                            incorrect: "Traditionnellement, les OUVRIERS sont payés à l'HEURE et les EMPLOYÉS au MOIS, même si cette distinction s'estompe progressivement."
+                        }
+                    },
+                    {
+                        type: "dragdrop",
+                        title: "🎮 Qui est qui? Emma ou Hugo?",
+                        instruction: "Associe chaque caractéristique à la bonne personne",
+                        items: [
+                            { text: "Travail manuel de production", category: "hugo" },
+                            { text: "Rémunération mensuelle fixe", category: "emma" },
+                            { text: "Commission paritaire 118", category: "hugo" },
+                            { text: "Frais de représentation 125€", category: "emma" },
+                            { text: "Contrat à durée déterminée", category: "hugo" },
+                            { text: "Suivi administratif des commandes", category: "emma" },
+                            { text: "Payé 13€/heure", category: "hugo" },
+                            { text: "CDI", category: "emma" }
+                        ],
+                        categories: {
+                            emma: "👩‍💼 Emma (Employée)",
+                            hugo: "👨‍🔧 Hugo (Ouvrier)"
+                        }
+                    },
+                    {
+                        type: "info",
+                        content: `
+                            <div class="info-card">
+                                <div class="info-card-title">🎓 Les 4 éléments essentiels du contrat de travail</div>
+                                <div class="info-card-content">
+                                    <p>Rappel : Pour qu'il y ait contrat de travail, il faut :</p>
+                                    <br>
+                                    <p>1️⃣ <strong>Un contrat</strong> (écrit ou verbal, même tacite)</p>
+                                    <p>2️⃣ <strong>Un travail</strong> à effectuer</p>
+                                    <p>3️⃣ <strong>Une rémunération</strong> en échange</p>
+                                    <p>4️⃣ <strong>Un lien de subordination</strong> (autorité de l'employeur)</p>
+                                    <br>
+                                    <p>💡 Ces éléments ne peuvent pas être modifiés unilatéralement par l'employeur sans l'accord du travailleur!</p>
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            }
+        };
+
+        // Initialize particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Start Module
+        function startModule(moduleId) {
+            gameState.currentModule = moduleId;
+            gameState.currentQuestion = 0;
+            gameState.moduleScore = 0;
+            
+            document.getElementById('welcomeScreen').classList.add('hidden');
+            document.getElementById('gameScreen').classList.add('active');
+            document.getElementById('summaryScreen').classList.add('hidden');
+            
+            document.getElementById('moduleTitle').textContent = modules[moduleId].title;
+            
+            loadQuestion();
+        }
+
+        // Load Question
+        function loadQuestion() {
+            const module = modules[gameState.currentModule];
+            const question = module.questions[gameState.currentQuestion];
+            const total = module.questions.length;
+            
+            document.getElementById('moduleProgress').textContent = `${gameState.currentQuestion + 1}/${total}`;
+            document.getElementById('gameProgressBar').style.width = `${((gameState.currentQuestion + 1) / total) * 100}%`;
+            
+            const content = document.getElementById('gameContent');
+            
+            switch(question.type) {
+                case 'info':
+                    renderInfo(content, question);
+                    break;
+                case 'quiz':
+                    renderQuiz(content, question);
+                    break;
+                case 'matching':
+                    renderMatching(content, question);
+                    break;
+                case 'dragdrop':
+                    renderDragDrop(content, question);
+                    break;
+                case 'calculator':
+                    renderCalculator(content, question);
+                    break;
+            }
+        }
+
+        // Render Info
+        function renderInfo(content, question) {
+            content.innerHTML = `
+                <div class="question-card">
+                    ${question.content}
+                    <button class="next-btn" onclick="nextQuestion()">J'ai compris! →</button>
+                </div>
+            `;
+        }
+
+        // Render Quiz
+        function renderQuiz(content, question) {
+            let scenarioHtml = '';
+            if (question.scenario) {
+                scenarioHtml = `
+                    <div class="scenario-box">
+                        <div class="scenario-illustration">${question.scenario.icon}</div>
+                        <div class="scenario-content">
+                            <div class="scenario-title">${question.scenario.title}</div>
+                            <p>${question.scenario.text}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            const letters = ['A', 'B', 'C', 'D'];
+            let optionsHtml = question.options.map((opt, i) => `
+                <button class="option-btn" onclick="checkAnswer(${i}, ${opt.correct})">
+                    <span class="option-letter">${letters[i]}</span>
+                    <span>${opt.text}</span>
+                </button>
+            `).join('');
+            
+            content.innerHTML = `
+                <div class="question-card">
+                    <span class="question-number">Question ${gameState.currentQuestion + 1}</span>
+                    ${scenarioHtml}
+                    <p class="question-text">${question.question}</p>
+                    <div class="options-grid">
+                        ${optionsHtml}
+                    </div>
+                    <div id="feedback" class="feedback"></div>
+                </div>
+            `;
+        }
+
+        // Check Answer
+        function checkAnswer(index, correct) {
+            const buttons = document.querySelectorAll('.option-btn');
+            const feedback = document.getElementById('feedback');
+            const question = modules[gameState.currentModule].questions[gameState.currentQuestion];
+            
+            buttons.forEach((btn, i) => {
+                btn.disabled = true;
+                if (question.options[i].correct) {
+                    btn.classList.add('correct');
+                } else if (i === index && !correct) {
+                    btn.classList.add('incorrect');
+                }
+            });
+            
+            if (correct) {
+                gameState.moduleScore += 100;
+                gameState.totalScore += 100;
+                updateScore();
+                feedback.className = 'feedback show success';
+                feedback.innerHTML = `
+                    <div class="feedback-title">✅ Correct!</div>
+                    <div class="feedback-text">${question.feedback.correct}</div>
+                    <button class="next-btn" onclick="nextQuestion()">Continuer →</button>
+                `;
+            } else {
+                feedback.className = 'feedback show error';
+                feedback.innerHTML = `
+                    <div class="feedback-title">❌ Pas tout à fait...</div>
+                    <div class="feedback-text">${question.feedback.incorrect}</div>
+                    <button class="next-btn" onclick="nextQuestion()">Continuer →</button>
+                `;
+            }
+        }
+
+        // Render Matching Game
+        function renderMatching(content, question) {
+            const shuffledPairs = [...question.pairs].sort(() => Math.random() - 0.5);
+            const situations = shuffledPairs.map(p => ({ text: p.situation, id: p.id }));
+            const conditions = [...new Set(question.pairs.map(p => p.condition))].sort(() => Math.random() - 0.5);
+            
+            let situationsHtml = situations.map(s => `
+                <div class="match-card" data-id="${s.id}" data-type="situation" onclick="selectMatch(this, 'situation')">${s.text}</div>
+            `).join('');
+            
+            let conditionsHtml = conditions.map(c => `
+                <div class="match-card" data-condition="${c}" data-type="condition" onclick="selectMatch(this, 'condition')">${c}</div>
+            `).join('');
+            
+            content.innerHTML = `
+                <div class="mini-game">
+                    <div class="mini-game-title">🎮 ${question.title}</div>
+                    <p style="margin-bottom: 1.5rem; opacity: 0.8;">${question.instruction}</p>
+                    <div class="matching-game">
+                        ${situationsHtml}
+                        ${conditionsHtml}
+                    </div>
+                    <div id="matchFeedback" style="margin-top: 1rem;"></div>
+                </div>
+            `;
+            
+            window.matchState = {
+                selected: null,
+                pairs: question.pairs,
+                matched: 0,
+                total: question.pairs.length
+            };
+        }
+
+        function selectMatch(element, type) {
+            if (element.classList.contains('matched')) return;
+            
+            if (window.matchState.selected && window.matchState.selected.type === type) {
+                window.matchState.selected.element.classList.remove('selected');
+            }
+            
+            if (window.matchState.selected && window.matchState.selected.type !== type) {
+                // Check match
+                const situationEl = type === 'situation' ? element : window.matchState.selected.element;
+                const conditionEl = type === 'condition' ? element : window.matchState.selected.element;
+                
+                const situationId = parseInt(situationEl.dataset.id);
+                const condition = conditionEl.dataset.condition;
+                
+                const pair = window.matchState.pairs.find(p => p.id === situationId);
+                
+                if (pair.condition === condition) {
+                    situationEl.classList.add('matched');
+                    conditionEl.classList.add('matched');
+                    situationEl.classList.remove('selected');
+                    conditionEl.classList.remove('selected');
+                    window.matchState.matched++;
+                    gameState.moduleScore += 25;
+                    gameState.totalScore += 25;
+                    updateScore();
+                    
+                    if (window.matchState.matched === window.matchState.total) {
+                        document.getElementById('matchFeedback').innerHTML = `
+                            <div class="feedback show success">
+                                <div class="feedback-title">🎉 Parfait! Toutes les associations sont correctes!</div>
+                                <button class="next-btn" onclick="nextQuestion()">Continuer →</button>
+                            </div>
+                        `;
+                    }
+                } else {
+                    situationEl.classList.add('wrong');
+                    conditionEl.classList.add('wrong');
+                    setTimeout(() => {
+                        situationEl.classList.remove('wrong', 'selected');
+                        conditionEl.classList.remove('wrong', 'selected');
+                    }, 500);
+                }
+                window.matchState.selected = null;
+            } else {
+                element.classList.add('selected');
+                window.matchState.selected = { element, type };
+            }
+        }
+
+        // Render Drag and Drop
+        function renderDragDrop(content, question) {
+            const shuffledItems = [...question.items].sort(() => Math.random() - 0.5);
+            
+            let itemsHtml = shuffledItems.map((item, i) => `
+                <div class="draggable-item" draggable="true" data-category="${item.category}" id="item-${i}">${item.text}</div>
+            `).join('');
+            
+            let categoriesHtml = Object.entries(question.categories).map(([key, label]) => `
+                <div class="drop-zone" data-category="${key}">
+                    <div class="drop-zone-title">${label}</div>
+                    <div class="drop-content"></div>
+                </div>
+            `).join('');
+            
+            content.innerHTML = `
+                <div class="mini-game">
+                    <div class="mini-game-title">🎮 ${question.title}</div>
+                    <p style="margin-bottom: 1.5rem; opacity: 0.8;">${question.instruction}</p>
+                    <div class="items-pool" id="itemsPool">
+                        ${itemsHtml}
+                    </div>
+                    <div class="drag-drop-area">
+                        ${categoriesHtml}
+                    </div>
+                    <div id="dragFeedback" style="margin-top: 1rem;"></div>
+                </div>
+            `;
+            
+            initDragDrop(question.items.length);
+        }
+
+        function initDragDrop(totalItems) {
+            const items = document.querySelectorAll('.draggable-item');
+            const zones = document.querySelectorAll('.drop-zone');
+            
+            window.dragState = {
+                placed: 0,
+                correct: 0,
+                total: totalItems
+            };
+            
+            items.forEach(item => {
+                item.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', item.id);
+                    item.classList.add('dragging');
+                });
+                
+                item.addEventListener('dragend', () => {
+                    item.classList.remove('dragging');
+                });
+            });
+            
+            zones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    zone.classList.add('dragover');
+                });
+                
+                zone.addEventListener('dragleave', () => {
+                    zone.classList.remove('dragover');
+                });
+                
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('dragover');
+                    
+                    const itemId = e.dataTransfer.getData('text/plain');
+                    const item = document.getElementById(itemId);
+                    const dropContent = zone.querySelector('.drop-content');
+                    
+                    if (item && !dropContent.contains(item)) {
+                        dropContent.appendChild(item);
+                        item.draggable = false;
+                        
+                        const isCorrect = item.dataset.category === zone.dataset.category;
+                        window.dragState.placed++;
+                        
+                        if (isCorrect) {
+                            window.dragState.correct++;
+                            item.style.background = 'rgba(46, 204, 113, 0.3)';
+                            item.style.borderLeft = '4px solid #2ECC71';
+                            gameState.moduleScore += 20;
+                            gameState.totalScore += 20;
+                            updateScore();
+                        } else {
+                            item.style.background = 'rgba(231, 76, 60, 0.3)';
+                            item.style.borderLeft = '4px solid #E74C3C';
+                        }
+                        
+                        if (window.dragState.placed === window.dragState.total) {
+                            const percentage = (window.dragState.correct / window.dragState.total) * 100;
+                            document.getElementById('dragFeedback').innerHTML = `
+                                <div class="feedback show ${percentage >= 70 ? 'success' : 'error'}">
+                                    <div class="feedback-title">${percentage >= 70 ? '🎉 Bien joué!' : '🤔 Pas mal, mais révise!'}</div>
+                                    <div class="feedback-text">Tu as ${window.dragState.correct}/${window.dragState.total} bonnes réponses (${percentage.toFixed(0)}%)</div>
+                                    <button class="next-btn" onclick="nextQuestion()">Continuer →</button>
+                                </div>
+                            `;
+                        }
+                    }
+                });
+            });
+        }
+
+        // Render Calculator
+        function renderCalculator(content, question) {
+            let questionsHtml = question.questions.map((q, i) => `
+                <div class="calc-input-group">
+                    <label>${q.label}</label>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <input type="number" class="calc-input" id="calc-${i}" placeholder="${q.hint}">
+                        <span style="font-weight: 700;">${q.unit}</span>
+                    </div>
+                    <small style="opacity: 0.6; font-style: italic;">${q.hint}</small>
+                </div>
+            `).join('');
+            
+            content.innerHTML = `
+                <div class="mini-game">
+                    <div class="mini-game-title">🧮 ${question.title}</div>
+                    <div class="calculator-game">
+                        <div class="scenario-box" style="margin-bottom: 2rem;">
+                            <div class="scenario-illustration">🚗</div>
+                            <div class="scenario-content">
+                                <div class="scenario-title">Scénario</div>
+                                <p>${question.scenario}</p>
+                            </div>
+                        </div>
+                        ${questionsHtml}
+                        <button class="verify-btn" onclick="verifyCalculations()">Vérifier mes calculs ✓</button>
+                        <div id="calcFeedback" style="margin-top: 1rem;"></div>
+                    </div>
+                </div>
+            `;
+            
+            window.calcState = {
+                questions: question.questions,
+                explanation: question.explanation
+            };
+        }
+
+        function verifyCalculations() {
+            let correct = 0;
+            const total = window.calcState.questions.length;
+            
+            window.calcState.questions.forEach((q, i) => {
+                const input = document.getElementById(`calc-${i}`);
+                const value = parseFloat(input.value);
+                
+                if (Math.abs(value - q.answer) < 1) {
+                    correct++;
+                    input.style.borderColor = '#2ECC71';
+                    input.style.background = 'rgba(46, 204, 113, 0.2)';
+                } else {
+                    input.style.borderColor = '#E74C3C';
+                    input.style.background = 'rgba(231, 76, 60, 0.2)';
+                }
+            });
+            
+            gameState.moduleScore += correct * 30;
+            gameState.totalScore += correct * 30;
+            updateScore();
+            
+            const answers = window.calcState.questions.map(q => `${q.label}: <strong>${q.answer} ${q.unit}</strong>`).join('<br>');
+            
+            document.getElementById('calcFeedback').innerHTML = `
+                <div class="feedback show ${correct === total ? 'success' : 'error'}">
+                    <div class="feedback-title">${correct === total ? '🎉 Parfait!' : `${correct}/${total} bonnes réponses`}</div>
+                    <div class="feedback-text">
+                        <p><strong>Réponses correctes :</strong></p>
+                        <p>${answers}</p>
+                        <br>
+                        <p><strong>💡 Explication :</strong> ${window.calcState.explanation}</p>
+                    </div>
+                    <button class="next-btn" onclick="nextQuestion()">Continuer →</button>
+                </div>
+            `;
+        }
+
+        // Next Question
+        function nextQuestion() {
+            const module = modules[gameState.currentModule];
+            gameState.currentQuestion++;
+            
+            if (gameState.currentQuestion >= module.questions.length) {
+                showSummary();
+            } else {
+                loadQuestion();
+            }
+        }
+
+        // Show Summary
+        function showSummary() {
+            document.getElementById('gameScreen').classList.remove('active');
+            document.getElementById('summaryScreen').classList.remove('hidden');
+            
+            const score = gameState.moduleScore;
+            const maxScore = modules[gameState.currentModule].questions.length * 100;
+            const percentage = (score / maxScore) * 100;
+            
+            document.getElementById('moduleScore').textContent = score;
+            
+            // Stars
+            const stars = document.querySelectorAll('.star-rating .star');
+            if (percentage >= 30) stars[0].classList.add('active');
+            if (percentage >= 60) stars[1].classList.add('active');
+            if (percentage >= 90) stars[2].classList.add('active');
+            
+            // Update progress
+            gameState.moduleProgress[gameState.currentModule] = Math.min(100, percentage);
+            document.getElementById(`progress-${gameState.currentModule}`).style.width = `${percentage}%`;
+            
+            // Check for badge
+            if (percentage >= 70 && !gameState.completedModules[gameState.currentModule]) {
+                gameState.completedModules[gameState.currentModule] = true;
+                gameState.badges++;
+                updateScore();
+                showBadge();
+            }
+        }
+
+        // Show Badge
+        function showBadge() {
+            const popup = document.getElementById('badgePopup');
+            const icons = ['🏆', '🎖️', '🥇', '⭐'];
+            const titles = ['Expert du Module!', 'Maître du Droit!', 'Champion!', 'Brillant!'];
+            
+            document.getElementById('badgeIcon').textContent = icons[Math.floor(Math.random() * icons.length)];
+            document.getElementById('badgeTitle').textContent = titles[Math.floor(Math.random() * titles.length)];
+            
+            popup.classList.add('show');
+            
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 3000);
+        }
+
+        // Back to Menu
+        function backToMenu() {
+            document.getElementById('welcomeScreen').classList.remove('hidden');
+            document.getElementById('gameScreen').classList.remove('active');
+            document.getElementById('summaryScreen').classList.add('hidden');
+            
+            // Reset stars
+            document.querySelectorAll('.star-rating .star').forEach(star => star.classList.remove('active'));
+        }
+
+        // Update Score Display
+        function updateScore() {
+            document.getElementById('totalScore').textContent = gameState.totalScore;
+            document.getElementById('badges').textContent = gameState.badges;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
+    </script>
 </body>
 </html>
